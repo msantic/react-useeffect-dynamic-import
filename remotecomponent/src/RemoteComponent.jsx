@@ -9,7 +9,7 @@ export default function RemoteComponent() {
 
     return (
         <div style={{ color: 'red', fontSize: 20 }}>
-            This is a remote component!
+            Success! This is a remote component dynamically loaded from a remote server.
         </div>
     )
 }

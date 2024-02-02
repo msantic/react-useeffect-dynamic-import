@@ -21,10 +21,10 @@ In the second tab, run:
 ```
 cd app
 npm install
-npm run dev
+npm run start
 ```
 
-If everything went well, the browser should open at http://localhost:4444. Open the developer tools and check for errors while trying to import and render the remote React component. If the useEffect function in the RemoteComponent.jsx file is commented out, everything should work fine.
+Open browser at http://localhost:4444  and check the developer tools console for errors while trying to import and render the remote React component. If the useEffect function in the RemoteComponent.jsx file is commented out, everything works fine.
 
 With useEffect code the error is:
 
