@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 
 export default function RemoteComponent() {
 
+    // THIS CAUSES AN ERROR WHEN DYNAMICALLY LOADED INSIDE THE MAIN APP
     useEffect(() => {
         console.log('useEffect hook in remote component!!!');
         // alert('useEffect hook in remote component!');
