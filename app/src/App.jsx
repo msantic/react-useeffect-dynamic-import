@@ -1,4 +1,4 @@
-import React, { useState, lazy, Suspense } from 'react'
+import React, { useEffect, useState, lazy, Suspense } from 'react'
 
 async function importUserComponent(moduleName) {
   try {        
@@ -9,11 +9,20 @@ async function importUserComponent(moduleName) {
   }
 }
 
+
+function loadRemoteComponent(componentName) {
+  let RemoteComponent = lazy(() => importUserComponent(componentName));
+  
+  return (props) => {
+    return <RemoteComponent {...props} useEffect={useEffect} useState={useState} />;
+  }
+}
+
+
 function App() {
-
-  let componentName = 'remotecomponent';
-
-  const RemoteComponent = lazy(() => importUserComponent(componentName));
+  
+  const componentName = 'remotecomponent';
+  const RemoteComponent = loadRemoteComponent(componentName);
 
   return (
     <>
@@ -25,7 +34,7 @@ function App() {
         <h2>Below should be visible dynamically imported react component with useEffect hook</h2>
         <div id="dynamic-imported-react-component">
           <Suspense fallback={<div>Loading...</div>}>
-            <RemoteComponent />
+            <RemoteComponent mainAppProp={"This is passed from the main app"} />
           </Suspense>
         </div>
        </div>

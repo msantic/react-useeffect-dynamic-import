@@ -5,5 +5,6 @@ await esbuild.build({
   bundle: true,
   format: 'esm',
   outfile: './dist/remotecomponent.js',
+  external: ['react', 'react-dom'],
   minify: true,
 })
