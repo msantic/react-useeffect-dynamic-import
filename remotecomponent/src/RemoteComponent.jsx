@@ -1,6 +1,6 @@
 // import React from "react";
 
-export default function RemoteComponent({mainAppProp, useEffect, useState}) {
+export default function RemoteComponent({useEffect, useState, ...props}) {
     const [count, setCount] = useState(0);
     const [useEffectFired, setUseEffectFired] = useState(false);
 
@@ -17,7 +17,7 @@ export default function RemoteComponent({mainAppProp, useEffect, useState}) {
                 Success! This is a remote component dynamically loaded from a remote server.
             </div>
             <div>
-                mainAppProp: {mainAppProp}
+                mainAppProp: {props.mainAppProp}
             </div>
             <div>
                 useEffect hook fired: {useEffectFired ? 'YES' : 'NO'}
